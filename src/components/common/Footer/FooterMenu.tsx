@@ -32,10 +32,10 @@ export const footerMenu = [
     ],
   },
   {
-    menuTitle: 'Use Cases',
+    menuTitle: 'Clients',
     subMenu: [
       {
-        title: 'The Best One',
+        title: 'Qtdealz',
         to: '',
       },
       {
@@ -69,11 +69,11 @@ export const footerMenu = [
       },
       {
         title: 'Hosting',
-        to: '',
+        to: 'https://m.do.co/c/0810016f07e7',
       },
       {
         title: 'Support',
-        to: '',
+        to: 'https://wa.me/message/VUQHDAMVQEK5A1',
       },
     ],
   },
@@ -82,7 +82,7 @@ export const footerMenu = [
     subMenu: [
       {
         title: 'About Us',
-        to: '',
+        to: '/about-us',
       },
       {
         title: 'Careers',
@@ -94,11 +94,11 @@ export const footerMenu = [
       },
       {
         title: 'Teams',
-        to: '',
+        to: '/about-us',
       },
       {
         title: 'Contact Us',
-        to: '',
+        to: '/contact-us',
       },
     ],
   },
@@ -114,20 +114,17 @@ export const bottomMenu = [
     to: '',
   },
   {
-    title: 'Sales and Refunds',
-    to: '',
-  },
-  {
-    title: 'Legal',
-    to: '',
-  },
-  {
     title: 'Site Map',
-    to: '',
+    to: 'https://goo.gl/maps/kBit2pAZiMLj2CWY6',
   },
 ];
 
 export default function FooterLink({ title, to }: Props) {
+  if(to.startsWith('http') || to.startsWith("https")) return (
+    <a href={to} target={"_blank"}>
+      <span>{title}</span>
+    </a>
+  )
   return (
     <Link to={to}>
       <span>{title}</span>

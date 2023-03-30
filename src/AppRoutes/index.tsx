@@ -37,7 +37,7 @@ export default function AppRoutes() {
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/services" element={<Services />} />
-      <Route path="/clients" element={<Testimonials />} />
+      {/* <Route path="/clients" element={<Testimonials />} /> */}
       <Route path="/design" element={<Design />} />
       <Route path="/development" element={<Development />} />
       <Route path="/digital-marketing" element={<Marketing />} />

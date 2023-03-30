@@ -8,7 +8,7 @@ interface SingleProjectProps {
 }
 
 export const SingleProject: React.FC<SingleProjectProps> = ({
-  project: { _id, img, title, description },
+  project: { _id, img, title, description, link },
 }) => {
   return (
     <div className="w-full px-4" key={_id}>
@@ -34,7 +34,9 @@ export const SingleProject: React.FC<SingleProjectProps> = ({
                 {description.length < 150 ? ' ' : '...'}
               </p>
             </div>
-            <button className="mr-auto font-bold hover:text-primary">Read More &#62;</button>
+            <a href={link} target={'_blank'}>
+              <button className="mr-auto font-bold hover:text-primary">Read More &#62;</button>
+            </a>
           </div>
         </div>
       </div>
