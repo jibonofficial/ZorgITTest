@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 interface Props {
   title: string;
   to: string;
+  menuTitle?: string;
 }
 
 export const footerMenu = [
@@ -11,19 +12,19 @@ export const footerMenu = [
     subMenu: [
       {
         title: 'Web & Apps Design',
-        to: '',
+        to: '/development',
       },
       {
         title: 'Web & Apps Development',
-        to: '',
+        to: '/development',
       },
       {
         title: 'Digital marketing',
-        to: '',
+        to: '/digital-marketing',
       },
       {
         title: 'Graphics Design',
-        to: '',
+        to: '/design',
       },
       {
         title: 'Search Engine Optimization',
@@ -119,15 +120,18 @@ export const bottomMenu = [
   },
 ];
 
-export default function FooterLink({ title, to }: Props) {
-  if(to.startsWith('http') || to.startsWith("https")) return (
+export default function FooterLink({ title, to, menuTitle }: Props) {
+  if (to.startsWith('http') || to.startsWith("https")) return (
     <a href={to} target={"_blank"}>
       <span>{title}</span>
     </a>
+  )
+  if (to.length === 0) return (
+    <p>{title}</p>
   )
   return (
     <Link to={to}>
       <span>{title}</span>
     </Link>
-  );
+  )
 }
